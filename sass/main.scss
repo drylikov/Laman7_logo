@@ -1,0 +1,112 @@
+// colors
+$bg-color: #19b2f9;
+$logo-color: #000;
+$circle-color: #fff;
+$triangle1-color: #d8d049;
+$triangle2-color: #acc542;
+$triangle3-color: #7ab840;
+$triangle4-color: #60ae30;
+$triangle5-color: #29337a;
+$triangle6-color: #1f4d98;
+$triangle7-color: #1b668e;
+$triangle8-color: #009ab4;
+$triangle9-color: #43bfee;
+
+// mixins
+@mixin center {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+}
+
+html, body{
+  width: 100%;
+  height: 100%;
+}
+
+body{
+  background: $bg-color;
+  overflow: hidden;
+}
+
+.logo{
+  @include center;
+  width: 74vmin;
+  height: 74vmin;
+  border-radius: 50%;
+  background: $circle-color;
+  filter: drop-shadow(0 0 3vmin white);
+
+  .triangle{
+    @include center;
+    width: 0;
+    height: 0;
+    border-left: 7.5vmin solid transparent;
+    border-right: 7.5vmin solid transparent;
+    border-bottom: 13vmin solid;
+  }
+
+  .top{
+    @include center;
+    top: -33vmin;
+
+    .triangle-1{
+      left: -24vmin;
+      border-bottom-color: $triangle1-color;
+      transform: rotate(180deg);
+    }
+
+    .triangle-2{
+      left: -9.0vmin;
+      border-bottom-color: $triangle2-color;
+    }
+
+    .triangle-3{
+      left: 6vmin;
+      border-bottom-color: $triangle3-color;
+      transform: rotate(180deg);
+    }
+
+    .triangle-4{
+      left: 21vmin;
+      border-bottom-color: $triangle4-color;
+    }
+  }
+
+  .bottom{
+    @include center;
+    top: 9.2vmin;
+    left: 4.2vmin;
+    transform: rotate(-60deg);
+
+    .triangle-5{
+      left: 26.3vmin;
+      border-bottom-color: $triangle5-color;
+    }
+
+    .triangle-6{
+      left: 11.5vmin;
+      border-bottom-color: $triangle6-color;
+      transform: rotate(180deg);
+    }
+
+    .triangle-7{
+      left: -3.2vmin;
+      border-bottom-color: $triangle7-color;
+    }
+
+    .triangle-8{
+      left: -18vmin;
+      border-bottom-color: $triangle8-color;
+      transform: rotate(180deg);
+    }
+
+    .triangle-9{
+      left: -32.95vmin;
+      border-bottom-color: $triangle9-color;
+    }
+  }
+}
